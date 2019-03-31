@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', loadChildren: './home/home.module#HomeModule'},
+  {path: 'about', loadChildren: './about/about.module#AboutModule'},
+  {path: 'portfolio', loadChildren: './portfolio/portfolio.module#PortfolioModule'},
+  {path: 'resume', loadChildren: './resume/resume.module#ResumeModule'},
+  {path: 'contact', loadChildren: './contact/contact.module#ContactModule'},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
